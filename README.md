@@ -98,3 +98,31 @@ $$        ARMA(p, q) \qquad : \qquad       X_t =   \omega_t + \omega_{t-1}\theta
 
 $$ \nabla X_t = (1 − B)^dX_t $$ 
 
+
+When analyzing and forecasting the sizes of error for models, certain assumption are made. One such assumption is that, the average of all error terms squared is same at any point. This assumption is called **heteroskedasticity**, and is of focus in **ARCH/GARCH** models where the volatility of time series is modeled with mathematical formulation, in the context of financial data.
+
+
+
+###  ARCH Model
+To reflect the influence of past squared error terms in the current volatility of time series, there is ARCH model. ARCH model includes an **Autoregressive (AR)** component: like in the ARIMA (Autoregressive Integrated Moving Average) model,  current value of the series is modeled as a linear combination of its past values. 
+
+Other component is called: **Conditional Heteroskedasticity**. The term "heteroskedasticity" refers to the situation where the variability of a time series is not constant over time. Formulation:
+
+$$ h_t = \alpha_0 + \sum_{i=1}^p \alpha_i\epsilon^2_{t-i} $$
+
+- $h_t$ is conditional variance at time $t$, representing the estimate of the variance of the time series at that specific time given the past information.
+- $\epsilon_{t-i}^2$ is the squared error term at lag $i$, indicating the squared difference between the observed value and the predicted value at time 
+-  $\alpha_0$ is a constant term in the model, representing the baseline level of conditional variance.
+-  $\alpha_{t-i}$ parameters  associated with the squared error terms at different lags. These coefficients determine the impact of past squared error terms on the current conditional variance. 
+- $p$ is the order of the model, representing the number of lagged squared error terms considered.
+
+
+
+
+###  GARCH Model
+**Generalized Autoregressive Conditional Heteroskedasticity** includes lagged values of both the conditional variance and the squared observations in the model. This allows GARCH to capture not only the autoregressive nature of volatility (as in ARCH) but also the persistence of volatility shocks.
+
+$$ h_t = \alpha_0 + \sum_{i=1}^p \alpha_i\epsilon^2_{t-i}  +  \sum_{j=1}^q \beta_j h_{t-j} $$
+
+
+
