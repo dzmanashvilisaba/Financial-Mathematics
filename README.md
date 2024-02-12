@@ -42,7 +42,7 @@ stock values and a range of discrete time values. The demo also computes the opt
 
 
 
-##  Multiperiod Bionamial Tree Method 
+##  Multiperiod Bionamial Tree Method for American Option
 It is a numerical technique used in finance to value options, where the price of the underlying asset can change over multiple periods. It is a discrete-time method for option pricing developed by Cox, Ross, and Rubinstein.
 
 ![](  https://github.com/dzmanashvilisaba/Financial-Mathematics/blob/main/graphs/BinomialTree.png  )  
