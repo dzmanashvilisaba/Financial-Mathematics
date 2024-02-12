@@ -1,5 +1,23 @@
 # Financial-Mathematics
 
+## Brownian Motion
+A stochastic process $W_t$, $t \geq 0$, is called a
+Brownian motion if it has the following properties:
+  1. $W_0 = 0$ and $t\mapsto W_t$, $t \geq 0$, is continuous with probability 1.
+  2. For $0 \leq s \leq t$ the increment $W_t - W_s$ has normal distribution with mean 0 and
+variance $t - s$.
+  3. For $0 \leq t_1 < t_2 \leq t_3 < t4 \leq \cdots \leq t_{2n-1} < t_{2n}$ the increments
+    $$ W(t_2) - W(t_1),  W(t_3) - W(t_2), \cdots , W(t_{2n}) - W(t_{2n-1})$$
+are independent.
+
+
+|  Brownian Motion     |   Geometric Brownian Motion   | 
+| -------------- | -------------- |
+| ![]( https://github.com/dzmanashvilisaba/Financial-Mathematics/blob/main/graphs/Brownian.png )    |  ![]( https://github.com/dzmanashvilisaba/Financial-Mathematics/blob/main/graphs/GeometricBrownian.png ) |   
+
+
+
+
 
 
 
