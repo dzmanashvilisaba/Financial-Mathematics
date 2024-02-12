@@ -7,7 +7,9 @@ Brownian motion if it has the following properties:
   2. For $0 \leq s \leq t$ the increment $W_t - W_s$ has normal distribution with mean 0 and
 variance $t - s$.
   3. For $0 \leq t_1 < t_2 \leq t_3 < t4 \leq \cdots \leq t_{2n-1} < t_{2n}$ the increments
-    $$ W(t_2) - W(t_1),  W(t_3) - W(t_2), \cdots , W(t_{2n}) - W(t_{2n-1})$$
+
+$$ W(t_2) - W(t_1),  W(t_3) - W(t_2), \cdots , W(t_{2n}) - W(t_{2n-1}) $$
+
 are independent.
 
 
