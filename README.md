@@ -42,6 +42,17 @@ stock values and a range of discrete time values. The demo also computes the opt
 
 
 
+##  Multiperiod Bionamial Tree Method 
+It is a numerical technique used in finance to value options, where the price of the underlying asset can change over multiple periods. It is a discrete-time method for option pricing developed by Cox, Ross, and Rubinstein.
+
+![](  https://github.com/dzmanashvilisaba/Financial-Mathematics/blob/main/graphs/BinomialTree.png  )  
+
+
+
+
+
+
+
 ##  Time Series Models
 
 A time series is a sequential set of data points, measured typically over successive times.
