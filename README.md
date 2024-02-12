@@ -15,7 +15,9 @@ stock values and a range of discrete time values. The demo also computes the opt
   2.  The second figure displays a surface of the  option price as a function of the stock value and time.
   3.  The third graph displays the optimal exercise boundary.
 
-
+|        |      |      |
+| -------------- | -------------- | -------------- |
+| ![]( https://github.com/dzmanashvilisaba/Financial-Mathematics/blob/main/graphs/AmericanPut1.png )    |  ![]( https://github.com/dzmanashvilisaba/Financial-Mathematics/blob/main/graphs/AmericanPut2.png ) |    ![]( https://github.com/dzmanashvilisaba/Financial-Mathematics/blob/main/graphs/AmericanPut3.png ) |
 
 
 
