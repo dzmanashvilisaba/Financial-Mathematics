@@ -70,4 +70,9 @@ $$        ARMA(p, q) \qquad : \qquad       X_t =   \omega_t + \omega_{t-1}\theta
 
 
 ### ARIMA Model
+- Differences of order $d$ are defined as $\nabla X_t = X_t − X_{t−1} = (1-B)X_t$, and $\nabla d = (1 − B)^d$, where $(1 − B)^d$ can be expanded algebraically for higher integer values of $d$.
+- The backshift operator $B$ is defined as $BX_t = X_{t−1}$. It can be extended: $B^kX_t = X_{t-k}$
+- A process $X_t$ is said to be $ARIMA(p, d, q)$ if following is $ARMA(p,q)$
+
+$$ \nabla X_t = (1 − B)^dX_t $$ 
 
