@@ -12,6 +12,15 @@ $$ W(t_2) - W(t_1),  W(t_3) - W(t_2), \cdots , W(t_{2n}) - W(t_{2n-1}) $$
 
 are independent.
 
+Stocastic differential equation for Brownian motion will be:
+
+$$ dW_t = \sqrt{dt} Z_t $$
+
+where $Z_t$ is standard Brownian motion increment that follows normal distribution. Stocastic differential equation for Geometric Brownian motion will be:
+
+$$ dS_t = \mu S_tdt + \sigma S_t dW_t $$
+
+where and $\mu$, the percentage drift, and $\sigma$, the percentage volatility, are constants
 
 |  Brownian Motion     |   Geometric Brownian Motion   | 
 | -------------- | -------------- |
