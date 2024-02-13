@@ -224,3 +224,8 @@ and we obtain the Black–Scholes–Merton equation after canceling the $rD$ ter
 
 $$\boxed{\quad \frac{\delta V}{\delta t} + \frac{1}{2}  \sigma^2S^2\frac{\delta^2V}{\delta S^2} + rS\frac{\delta V}{\delta S} = rV\quad }$$
 
+
+|  Put Option at Strike Price      |   Binary Option at Strike Price   | 
+| -------------- | -------------- |
+| ![](  https://github.com/dzmanashvilisaba/Financial-Mathematics/blob/main/graphs/PutAtStrike.png )    |  ![]( https://github.com/dzmanashvilisaba/Financial-Mathematics/blob/main/graphs/BinaryAtStrike.png ) |   
+
