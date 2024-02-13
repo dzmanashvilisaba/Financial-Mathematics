@@ -42,6 +42,7 @@ stock values and a range of discrete time values. The demo also computes the opt
 
 
 
+
 ##  Multiperiod Bionamial Tree Method for American Option
 It is a numerical technique used in finance to value options, where the price of the underlying asset can change over multiple periods. It is a discrete-time method for option pricing developed by Cox, Ross, and Rubinstein.
 
@@ -136,4 +137,81 @@ $$ h_t = \alpha_0 + \sum_{i=1}^p \alpha_i\epsilon^2_{t-i} $$
 $$ h_t = \alpha_0 + \sum_{i=1}^p \alpha_i\epsilon^2_{t-i}  +  \sum_{j=1}^q \beta_j h_{t-j} $$
 
 
+
+
+## Black-Scholes-Merton Formulation
+Assumptions on Underlying Asset:
+  1.  Asset follows a geometric Brownian motion with constant volatility
+  2.  There are no dividens or stock splits
+
+Assumptions on the Financial Market:
+  1.  It is possible to buy and sell any amount of asset at any time
+  2.  Bid and ask prices are equal. i.e. the bid-ask spread is zero
+  3.  There are no transaction costs or taxes
+  4.  Short selling is allowed without any cost. Borrowing money is possible at any time
+  5.  The risk-free interest rate is known and costant.
+
+The option value, $V$, is depended on the time, $t$, and underlying asset (stock) price, $S$. As, time changes from $t$ to $t+\delta t$, $V$ also changes. Exapnd the $V(S, t)$ using taylor expansion of second order:
+
+$$ \delta V = V_t\delta t + V_S\delta S + \frac{1}{2}V_{tt}(\delta t)^2 + V_{St}\delta S\delta t + \frac{1}{2}V_{SS}(\delta S)^2 $$
+
+The increment $\delta t$ is close to 0 and we ignore any term whose order is greater than 1 by Ito's lemma. (practical rule of thumb: $(\delta t)^2 = 0$, $(\delta W)^2 = \delta t$, $\delta t\times \delta W = (\delta t)^{3/2}$).
+
+$$ (\delta S)^2 = \sigma^2S^2(\delta W)^2 + \mathrm{higher\ order\ terms} \approx \sigma^2S^2\delta t $$
+
+we can classify the increments as follows:
+
+$$\delta V = (V_t + \frac{1}{2}\sigma^2 S^2 V_{SS})\delta t + V_S\delta S$$
+
+(above, first term in parantheses is risk-free, second term is risky)
+
+To derive a partial differential equation for $V$ we take the viewpoint of a fund
+manager of the portfolio $\Pi$ based on the idea of hedging, and construct a portfolio
+$\Pi$ that is self-financing and risk-free as follows:
+
+$$\Pi (S, t) = -V(S,t) + D (S, t) +\Delta (S,t) S $$
+
+In other words, $\Pi consists of an option that has been sold, a bank deposit or riskfree
+asset $D$, and $\Delta$ shares of risky asset $S$. Here $\Delta$ is a function of $t$ and $S$, and is
+called the hedge ratio. If $\Delta < 0 $, it represents short selling.
+
+As a fund manager we maintain the same number of shares of a stock from time
+$t$ to $t + \delta t$, which fits common sense. More precisely, since we do not know how
+much $S$ would change, we wait until we obtain the information on the stock value at
+time $t + \delta t$, and make an investment decision upon that information. Suppose that
+while the hedge ratio $\Delta t$ is fixed, $S_t$ changes to $S_{t+\delta t}$, and $\Pi_t$ changes to $\Pi_{t+\delta t}$.
+
+The risk-free asset Dt gains interest
+$$ \delta D_t = rD\delta t$$
+
+Hence:
+
+$$ \delta Pi = -\delta V + \delta D + \Delta \delta S$$
+
+$$ \delta Pi = -\delta V + rD\delta t + \Delta \delta S$$
+
+$$  \delta Pi = (-V_t - \frac{1}{2}\sigma^2 S^2 V_{SS} + rD)\delta t + \left( \Delta - V_S \right)\delta S $$
+
+If we take
+	$$\Delta_t = V_S(t, S_t)$$
+
+for every $t$, then we have
+ $$ \delta\Pi = (-V_t - \frac{1}{2}\sigma^2 S^2 V_{SS} + rD)\delta t  $$
+
+Now the $\delta S$ term has disappeared and $\delta \Pi$ is risk-free, and hence it is equivalent to a
+bank deposit for a time duration $\delta t$. Thus we obtain
+
+$$ \delta \Pi = r\Pi \delta t$$
+
+By the no arbitrage principle:
+
+$$  (-V_t - \frac{1}{2}\sigma^2 S^2 V_{SS} + rD)\delta t  =   r\Pi \delta  $$
+
+Therefore
+
+$$  \left(-V_t - \frac{1}{2}\sigma^2 S^2 V_{SS} + rD \right)\delta t = (-V + D  +V_S S )\delta t$$
+
+and we obtain the Black–Scholes–Merton equation after canceling the $rD$ terms.
+
+$$\boxed{\quad \frac{\delta V}{\delta t} + \frac{1}{2}  \sigma^2S^2\frac{\delta^2V}{\delta S^2} + rS\frac{\delta V}{\delta S} = rV\quad }$$
 
